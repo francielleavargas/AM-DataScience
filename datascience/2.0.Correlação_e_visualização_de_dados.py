@@ -44,7 +44,7 @@ Calcule a matriz de covariância dos dados (`numpy.cov`) e visualize-a através 
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-#calcula matriz de corelação usando o método pearson
+#calcula matriz de correlação usando o método pearson
 data = np.array(X)
 covMatrix = np.cov(data, rowvar=False, bias=True)
 print(corrMatrix)

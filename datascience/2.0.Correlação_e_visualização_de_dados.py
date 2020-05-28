@@ -63,7 +63,7 @@ Agora calcule a matriz de correlação (`pandas.DataFrame.corr`) utilizando o m�
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-#matriz de corelação usando o método pearson
+#matriz de correlação usando o método pearson
 aux = pd.DataFrame(df, columns=['sepal_length','sepal_width','petal_length', 'petal_width'])
 corrMatrix = aux.corr(method='pearson')
 print(corrMatrix)

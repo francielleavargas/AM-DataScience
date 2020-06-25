@@ -43,11 +43,8 @@ Substituindo valores nulos por uma constante:
 """
 
 from sklearn.impute import SimpleImputer
-
 imp = SimpleImputer(missing_values=np.nan, strategy='constant', fill_value=0)
-
 df_clean = imp.fit_transform(df)
-
 df_clean
 
 """---
@@ -55,7 +52,6 @@ Dividindo o dataset em 2 conjuntos, um com $60\%$ dos dados e outro com $40\%$:
 """
 
 from sklearn.model_selection import train_test_split
-
 X = df_clean[:,:-1]
 y = df_clean[:,-1:]
 print("X:")
@@ -76,30 +72,21 @@ print(y_test)
 """---
 Treinando um classificador qualquer:
 """
-
 from sklearn.neighbors import KNeighborsClassifier
-
 knn = KNeighborsClassifier(n_neighbors=1)
-
 print(y_train.reshape(-1))
 print(y_train)
 knn.fit(X_train, y_train.reshape(-1))
-
 y_pred = knn.predict(X_test)
-
 print(y_pred)
 
 """---
 Extraindo acurácia:
 """
-
 from sklearn.metrics import accuracy_score
-
 print("Predict:")
 print(y_pred.reshape(-1))
 print("True:")
 print(y_test.reshape(-1))
-
 accuracy = accuracy_score(y_test.reshape(-1), y_pred) # (tp + tn)/ (tp + tn + fp + fn)
-
 print("Accuracy: %.2f%%" % (accuracy*100))
